@@ -17,9 +17,11 @@ export const app = new Elysia()
 
 
 if (import.meta.main) {
+	app.listen(3000)
+
 	console.log(
 		`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
 	)
 }
 
-export default app
+export default app.handle
