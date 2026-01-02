@@ -14,8 +14,14 @@ export const app = new Elysia()
 		})
 	)
 	.get('/message', { message: 'Hello from server' } as const)
-	.listen(3000)
 
-console.log(
-	`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-)
+
+if (import.meta.main) {
+	app.listen(3000)
+
+	console.log(
+		`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
+	)
+}
+
+export default app.handle
