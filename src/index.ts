@@ -22,4 +22,4 @@ if (import.meta.main) {
 	)
 }
 
-export default app.handle
+export default app
